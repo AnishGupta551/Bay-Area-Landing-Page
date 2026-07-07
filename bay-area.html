@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Counseling Events in the Bay Area | Empowerly</title>
+
+<!-- Adelle (typekit) — loaded by Empowerly CSS -->
+<link rel="stylesheet" href="https://use.typekit.net/qjm8wvj.css">
+<!-- Satoshi — Empowerly body font -->
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap">
+
+<link rel="stylesheet" href="Empowerly CSS.css">
+
+<style>
+  /* Layout & structure only — colors/fonts come from elementor-kit-35579 in Empowerly CSS.css */
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    font-family: "Satoshi Regular", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--e-global-color-text);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3, h4 { margin: 0; }
+  p { margin: 0; }
+
+  .page-wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+
+  /* ── Eyebrow label ── */
+  .eyebrow {
+    display: block;
+    font-family: "Satoshi Regular", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--e-global-color-secondary);
+    margin-bottom: 10px;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-family: "Satoshi Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--e-global-color-secondary);
+    color: #fff;
+    border-color: var(--e-global-color-secondary);
+  }
+  .btn-primary:hover {
+    background: #009bc5;
+    border-color: #009bc5;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+  }
+  .btn-ghost:hover {
+    border-color: #fff;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--e-global-color-primary);
+    border-color: var(--e-global-color-primary);
+  }
+  .btn-outline:hover {
+    background: var(--e-global-color-primary);
+    color: #fff;
+  }
+
+  /* ── Sections ── */
+  section { padding: 72px 0; }
+  .section-bg { background: var(--e-global-color-e71dbc2); }
+
+  .section-head { max-width: 620px; margin-bottom: 44px; }
+  .section-head h2 {
+    font-family: adelle, serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    color: var(--e-global-color-primary);
+    margin-top: 8px;
+  }
+  .section-head p {
+    font-size: 16px;
+    color: var(--e-global-color-text);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--e-global-color-8de790d);
+    color: #fff;
+    padding: 72px 0 0;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 52px;
+    align-items: center;
+    padding-bottom: 64px;
+  }
+
+  .hero h1 {
+    font-family: adelle, serif;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 55px;
+    letter-spacing: 1.75px;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  .hero .lede {
+    font-size: 18px;
+    color: rgba(255,255,255,0.78);
+    margin-top: 20px;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  /* Hero stat card */
+  .hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 14px;
+    padding: 28px;
+    backdrop-filter: blur(4px);
+  }
+
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-row:last-child { border-bottom: none; }
+
+  .stat-num {
+    font-family: adelle, serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--e-global-color-secondary);
+    flex-shrink: 0;
+    min-width: 72px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.45;
+  }
+
+  /* ── Results / college pills ── */
+  .results-row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .results-stat {
+    background: var(--e-global-color-primary);
+    color: #fff;
+    border-radius: 14px;
+    padding: 32px 26px;
+  }
+
+  .results-stat .big {
+    font-family: adelle, serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--e-global-color-secondary);
+  }
+
+  .results-stat p {
+    color: rgba(255,255,255,0.72);
+    font-size: 15px;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  .pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .college-pill {
+    border: 1px solid var(--e-global-color-ae4b10a);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--e-global-color-primary);
+    background: #fff;
+  }
+
+  .see-more-link {
+    display: inline-block;
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--e-global-color-secondary);
+  }
+
+  .story-carousel {
+    position: relative;
+  }
+
+  .story-scroller {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .story-scroller::-webkit-scrollbar { display: none; }
+
+  .story-track {
+    display: flex;
+    gap: 20px;
+  }
+
+  .story-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .story-nav-prev { left: -8px; }
+  .story-nav-next { right: -8px; }
+
+  /* ID selectors used deliberately: the site-wide button reset in Empowerly CSS.css
+     targets [type="button"]/button at equal specificity to a class, so a class alone
+     gets partially overridden (background, border, box-sizing). IDs win outright. */
+  #story-prev, #story-next {
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--e-global-color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: background-color 0.2s;
+  }
+  #story-prev:hover, #story-next:hover {
+    background-color: var(--e-global-color-secondary);
+  }
+  #story-prev svg, #story-next svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .story-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 22px;
+  }
+  .story-dots .story-dot {
+    box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--e-global-color-ae4b10a);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .story-dots .story-dot.is-active {
+    background-color: var(--e-global-color-secondary);
+    transform: scale(1.25);
+  }
+
+  .story-tile {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    border: 1px solid var(--e-global-color-ae4b10a);
+    border-radius: 14px;
+    padding: 26px 24px 30px;
+    background: #fff;
+    text-align: center;
+  }
+  .story-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 18px;
+    background: var(--e-global-color-e71dbc2);
+  }
+  .anon-head {
+    position: relative;
+  }
+  .anon-head::before,
+  .anon-head::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    background: var(--e-global-color-ae4b10a);
+  }
+  /* head */
+  .anon-head::before {
+    top: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+  /* shoulders */
+  .anon-head::after {
+    bottom: -6px;
+    width: 76px;
+    height: 50px;
+    border-radius: 50% 50% 0 0;
+    transform: translateX(-50%);
+  }
+  .story-tile p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--e-global-color-primary);
+  }
+
+  /* ── Event cards ── */
+  .card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .card-grid-2 { grid-template-columns: repeat(2,1fr); }
+
+  .ev-card {
+    border: 1px solid var(--e-global-color-ae4b10a);
+    border-radius: 14px;
+    padding: 22px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ev-top { display: flex; gap: 14px; align-items: flex-start; }
+
+  .ev-date {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 10px;
+    background: var(--e-global-color-e71dbc2);
+    flex-shrink: 0;
+  }
+  .ev-date .mo {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--e-global-color-secondary);
+    text-transform: uppercase;
+  }
+  .ev-date .day {
+    font-family: adelle, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--e-global-color-primary);
+    line-height: 1.1;
+  }
+
+  .ev-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--e-global-color-primary);
+    line-height: 1.35;
+  }
+
+  .ev-meta { font-size: 13px; color: var(--e-global-color-text); opacity: 0.75; }
+  .ev-desc { font-size: 14px; color: var(--e-global-color-text); flex-grow: 1; line-height: 1.55; }
+  .ev-card .btn { align-self: flex-start; padding: 9px 20px; font-size: 13.5px; }
+
+  /* ── Luma checkout button — match site style ── */
+  .luma-checkout--button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-family: "Satoshi Regular", sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 2px solid var(--e-global-color-secondary);
+    background: var(--e-global-color-secondary);
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .luma-checkout--button:hover {
+    background: #009bc5;
+    border-color: #009bc5;
+  }
+
+  /* Interest banner */
+  .interest-banner {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid var(--e-global-color-ae4b10a);
+    border-radius: 14px;
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .interest-banner h4 {
+    font-family: adelle, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--e-global-color-primary);
+  }
+  .interest-banner p {
+    font-size: 14.5px;
+    color: var(--e-global-color-text);
+    margin-top: 6px;
+    max-width: 480px;
+  }
+
+  /* ── Luma calendar embed ── */
+  .luma-calendar-wrap {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .results-row { grid-template-columns: 1fr; }
+    .card-grid, .card-grid-2 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 34px; line-height: 42px; }
+  }
+</style>
+</head>
+<body class="elementor-kit-35579">
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="page-wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Bay Area &middot; College admissions events</span>
+        <h1>College admissions events for Bay Area families</h1>
+        <p class="lede">Meet Empowerly counselors in person, hear from former admissions officers, and get the guidance your student needs, right here in the Bay Area.</p>
+        <div class="hero-ctas">
+          <a href="#events" class="btn btn-primary">See upcoming events</a>
+          <a href="https://empowerly.com/consult/" class="btn btn-ghost" target="_blank" rel="noopener">Book a free consultation &rarr;</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stat-row">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Bay Area students served to date</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-num">98%</span>
+          <span class="stat-label">5-year admit rate to a top 100 US college, nationwide</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-num">2</span>
+          <span class="stat-label">upcoming events in the Bay Area this season</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Local results ── -->
+<section>
+  <div class="page-wrap">
+    <div class="section-head">
+      <span class="eyebrow">Local results</span>
+      <h2>Where Bay Area students got in</h2>
+    </div>
+    <!-- TODO: swap anonymous placeholder heads for real, verified student photos + stories before publishing -->
+    <div class="story-carousel">
+      <button type="button" class="story-nav story-nav-prev" id="story-prev" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"></polyline></svg>
+      </button>
+      <div class="story-scroller" id="story-scroller">
+        <div class="story-track" id="story-track">
+          <div class="story-tile">
+            <div class="story-photo anon-head" aria-hidden="true"></div>
+            <p>Student A from Lynbrook High School got into Stanford University with the help of Empowerly.</p>
+          </div>
+          <div class="story-tile">
+            <div class="story-photo anon-head" aria-hidden="true"></div>
+            <p>Student B from Monta Vista High School got into UC Berkeley with the help of Empowerly.</p>
+          </div>
+          <div class="story-tile">
+            <div class="story-photo anon-head" aria-hidden="true"></div>
+            <p>Student C from Palo Alto High School got into Harvard University with the help of Empowerly.</p>
+          </div>
+          <div class="story-tile">
+            <div class="story-photo anon-head" aria-hidden="true"></div>
+            <p>Student D from Saratoga High School got into MIT with the help of Empowerly.</p>
+          </div>
+          <div class="story-tile">
+            <div class="story-photo anon-head" aria-hidden="true"></div>
+            <p>Student E from Mission San Jose High School got into UCLA with the help of Empowerly.</p>
+          </div>
+          <div class="story-tile">
+            <div class="story-photo anon-head" aria-hidden="true"></div>
+            <p>Student F from Gunn High School got into Yale University with the help of Empowerly.</p>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="story-nav story-nav-next" id="story-next" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+      </button>
+    </div>
+    <div class="story-dots" id="story-dots"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var scroller = document.getElementById('story-scroller');
+  var track = document.getElementById('story-track');
+  var dotsWrap = document.getElementById('story-dots');
+  if (!scroller || !track) return;
+
+  var originalTiles = Array.prototype.slice.call(track.children);
+  var tileCount = originalTiles.length;
+  var beforeClones = originalTiles.map(function (t) { return t.cloneNode(true); });
+  var afterClones = originalTiles.map(function (t) { return t.cloneNode(true); });
+  beforeClones.forEach(function (c) { track.insertBefore(c, track.firstChild); });
+  afterClones.forEach(function (c) { track.appendChild(c); });
+
+  var singleSetWidth = track.scrollWidth / 3;
+  var tileStep = singleSetWidth / tileCount;
+  scroller.scrollLeft = singleSetWidth;
+
+  var dots = originalTiles.map(function (_, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'story-dot';
+    dot.setAttribute('aria-label', 'Go to story ' + (i + 1));
+    dot.addEventListener('click', function () {
+      var currentSet = Math.floor(scroller.scrollLeft / singleSetWidth);
+      scroller.scrollTo({ left: currentSet * singleSetWidth + i * tileStep, behavior: 'smooth' });
+    });
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  function updateDots() {
+    var index = Math.round(scroller.scrollLeft / tileStep) % tileCount;
+    if (index < 0) index += tileCount;
+    dots.forEach(function (dot, i) { dot.classList.toggle('is-active', i === index); });
+  }
+
+  scroller.addEventListener('scroll', function () {
+    if (scroller.scrollLeft <= 0) {
+      scroller.scrollLeft += singleSetWidth;
+    } else if (scroller.scrollLeft >= singleSetWidth * 2) {
+      scroller.scrollLeft -= singleSetWidth;
+    }
+    updateDots();
+  });
+
+  document.getElementById('story-prev').addEventListener('click', function () {
+    scroller.scrollBy({ left: -tileStep, behavior: 'smooth' });
+  });
+  document.getElementById('story-next').addEventListener('click', function () {
+    scroller.scrollBy({ left: tileStep, behavior: 'smooth' });
+  });
+
+  updateDots();
+})();
+</script>
+
+<!-- ── In-person events ── -->
+<section id="events" class="section-bg">
+  <div class="page-wrap">
+    <div class="section-head">
+      <span class="eyebrow">In person</span>
+      <h2>Upcoming Bay Area events</h2>
+      <p>Drop by, hear the secrets from former admissions officers, and meet a counselor face to face.</p>
+    </div>
+
+    <!-- Luma Bay Area calendar embed -->
+    <div class="luma-calendar-wrap">
+      <iframe
+        src="https://luma.com/embed/calendar/cal-HPMbRCcE9xVSR7g/events?tag=Bay%20Area"
+        width="100%"
+        height="550"
+        frameborder="0"
+        style="border: 1px solid #bfcbda88; border-radius: 12px;"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
+    </div>
+
+    <div class="card-grid card-grid-2" style="margin-top:32px;" id="in-person-events"></div>
+
+    <script>
+    (function () {
+      // Add/edit events here — one object per event. No need to touch any HTML.
+      var EVENTS = [
+        {
+          mo: 'Jul', day: '14',
+          title: 'Inside the Admissions Committee — Dinner with a Former Admissions Officer',
+          location: 'Los Altos, CA', time: '6:00 pm PT',
+          description: 'A former admissions officer gives an honest look at how selective colleges actually evaluate applications and answers your questions directly.',
+          lumaEventId: 'evt-8zFD1MpBFGNmi7H'
+        },
+        {
+          mo: 'Jul', day: '30',
+          title: 'Inside the Admissions Committee - Dinner with a Former Admissions Officer',
+          location: 'Palo Alto, CA', time: '6:00 pm PT',
+          description: 'Walk through the framework Empowerly counselors use to build lists that are both ambitious and realistic, with real examples from Bay Area students.',
+          lumaEventId: 'evt-G24YMYBRR0s6b5n'
+        }
+        ,
+        {
+          mo: 'Aug', day: '4',
+          title: 'Inside the Admissions Committee - Dinner with a Former Admissions Officer',
+          location: 'Palo Alto, CA', time: '6:00 pm PT',
+          description: 'Walk through the framework Empowerly counselors use to build lists that are both ambitious and realistic, with real examples from Bay Area students.',
+          lumaEventId: 'evt-lYyZLQ3WavVKFzx'
+        }
+      ];
+
+      var container = document.getElementById('in-person-events');
+      if (!container) return;
+
+      function el(tag, className, text) {
+        var e = document.createElement(tag);
+        if (className) e.className = className;
+        if (text) e.textContent = text;
+        return e;
+      }
+
+      EVENTS.forEach(function (ev) {
+        var card = el('div', 'ev-card');
+
+        var top = el('div', 'ev-top');
+        var dateBadge = el('div', 'ev-date');
+        dateBadge.appendChild(el('span', 'mo', ev.mo));
+        dateBadge.appendChild(el('span', 'day', ev.day));
+        top.appendChild(dateBadge);
+
+        var titleWrap = el('div');
+        titleWrap.appendChild(el('h4', null, ev.title));
+        titleWrap.appendChild(el('p', 'ev-meta', ev.location + ' · ' + ev.time));
+        top.appendChild(titleWrap);
+
+        card.appendChild(top);
+        card.appendChild(el('p', 'ev-desc', ev.description));
+
+        var btn = document.createElement('a');
+        btn.href = 'https://luma.com/event/' + ev.lumaEventId;
+        btn.className = 'luma-checkout--button';
+        btn.dataset.lumaAction = 'checkout';
+        btn.dataset.lumaEventId = ev.lumaEventId;
+        btn.textContent = 'Register for Event';
+        card.appendChild(btn);
+
+        container.appendChild(card);
+      });
+    })();
+    </script>
+
+    <div class="interest-banner">
+      <div>
+        <h4>More Bay Area events on the way</h4>
+        <p>We're scheduling new sessions regularly. Join the interest list and we'll email you the moment the next one goes live.</p>
+      </div>
+      <a href="#" class="btn btn-primary">Join the interest list</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Webinars ── -->
+<section>
+  <div class="page-wrap">
+    <div class="section-head">
+      <span class="eyebrow">From anywhere</span>
+      <h2>Can't make it in person? Join a live webinar</h2>
+      <p>The same Empowerly counselors, live and free, from your kitchen table.</p>
+    </div>
+    <div class="card-grid">
+      <div class="ev-card">
+        <div class="ev-top">
+          <div class="ev-date"><span class="mo">Jul</span><span class="day">09</span></div>
+          <div>
+            <h4>How admissions officers actually read an application</h4>
+            <p class="ev-meta">Live webinar &middot; 5:00 pm PT</p>
+          </div>
+        </div>
+        <p class="ev-desc">A former admissions reader walks through what gets a closer look and what gets skimmed.</p>
+        <a href="#" class="btn btn-outline">Register</a>
+      </div>
+      <div class="ev-card">
+        <div class="ev-top">
+          <div class="ev-date"><span class="mo">Jul</span><span class="day">21</span></div>
+          <div>
+            <h4>Choosing a major before you're sure</h4>
+            <p class="ev-meta">Live webinar &middot; 5:00 pm PT</p>
+          </div>
+        </div>
+        <p class="ev-desc">Practical ways to declare a direction on paper without locking your student into one.</p>
+        <a href="#" class="btn btn-outline">Register</a>
+      </div>
+      <div class="ev-card">
+        <div class="ev-top">
+          <div class="ev-date"><span class="mo">Aug</span><span class="day">06</span></div>
+          <div>
+            <h4>Financial aid timelines, explained simply</h4>
+            <p class="ev-meta">Live webinar &middot; 4:00 pm PT</p>
+          </div>
+        </div>
+        <p class="ev-desc">FAFSA, CSS Profile, and merit aid deadlines mapped out on one calendar.</p>
+        <a href="#" class="btn btn-outline">Register</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- checkout-button.js binds click handlers once, on load, to whatever [data-luma-action]
+     elements already exist in the DOM — it does not use delegated/live binding. Any script
+     that generates Luma register buttons dynamically must run above this tag. -->
+<script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
+</body>
+</html>
