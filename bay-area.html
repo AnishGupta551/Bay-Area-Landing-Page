@@ -129,14 +129,20 @@
     border-color: #fff;
   }
 
-  .btn-outline {
-    background: transparent;
-    color: var(--e-global-color-primary);
-    border-color: var(--e-global-color-primary);
-  }
   .btn-outline:hover {
     background: var(--e-global-color-primary);
     color: #fff;
+  }
+
+  /* Keyboard focus states */
+  .btn:focus-visible,
+  .nav-links a:focus-visible,
+  .luma-checkout--button:focus-visible,
+  .story-dots .story-dot:focus-visible,
+  #story-prev:focus-visible,
+  #story-next:focus-visible {
+    outline: 2px solid var(--e-global-color-secondary);
+    outline-offset: 2px;
   }
 
   /* ── Sections ── */
