@@ -31,6 +31,58 @@
   p { margin: 0; }
 
   .page-wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+  
+  /* ── Navigation bar ── */  
+  .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: #101b6e;
+  }
+  .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      padding: 0px 10px;
+  }
+  .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+  .nav-links a {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Satoshi Regular", sans-serif;
+      color: #FFFFFF;
+      padding: 22px 10px;
+  }
+  @media (max-width: 500px) {
+    .nav-inner {
+      gap: 16px;
+      padding: 12px 10px;
+    }
+    .nav-logo-img {
+      height: 24px;
+    }
+    .nav-links {
+      gap: 16px;
+    }
+    .nav-links a {
+      padding: 20px 4px;
+      font-size: 14px;
+    }
+  }
+  .nav-logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+  }
+  .nav-links a:hover { color: var(--e-global-color-secondary); }
 
   /* ── Eyebrow label ── */
   .eyebrow {
@@ -116,7 +168,7 @@
   .hero {
     background: var(--e-global-color-8de790d);
     color: #fff;
-    padding: 72px 0 0;
+    padding: 42px 0 0;
   }
 
   .hero-grid {
@@ -489,6 +541,20 @@
 </head>
 <body class="elementor-kit-35579">
 
+<!-- ── Navigation Bar ── -->
+<nav class="site-nav">
+  <div class="page-wrap nav-inner">
+    <a href="https://empowerly.com" class="nav-logo">
+      <img src="EmpowerlyLogo.svg" alt="Empowerly" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#events">Events</a></li>
+      <li><a href="#webinars">Webinars</a></li>
+      <li><a href="#results">Results</a></li>
+    </ul>
+  </div>
+</nav>
+
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="page-wrap">
@@ -521,7 +587,7 @@
 </section>
 
 <!-- ── Local results ── -->
-<section>
+<section id="results">
   <div class="page-wrap">
     <div class="section-head">
       <span class="eyebrow">Local results</span>
@@ -729,7 +795,7 @@
 </section>
 
 <!-- ── Webinars ── -->
-<section>
+<section id="webinars">
   <div class="page-wrap">
     <div class="section-head">
       <span class="eyebrow">From anywhere</span>
