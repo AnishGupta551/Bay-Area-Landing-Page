@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>College Counseling Events in the Bay Area | Empowerly</title>
+<title>College Counseling Events in Palo Alto | Empowerly</title>
 
 <!-- Adelle (typekit) — loaded by Empowerly CSS -->
 <link rel="stylesheet" href="https://use.typekit.net/qjm8wvj.css">
@@ -157,6 +157,12 @@
     line-height: 40px;
     color: var(--e-global-color-primary);
     margin-top: 8px;
+  }
+  #results .section-head {
+    max-width: none;
+  }
+  #results .section-head h2 {
+    white-space: nowrap;
   }
   .section-head p {
     font-size: 16px;
@@ -373,52 +379,64 @@
 
   .story-tile {
     flex: 0 0 280px;
+    height: 220px;
     scroll-snap-align: start;
-    border: 1px solid var(--e-global-color-ae4b10a);
-    border-radius: 14px;
-    padding: 26px 24px 30px;
-    background: #fff;
-    text-align: center;
+    perspective: 1200px;
   }
-  .story-photo {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 18px;
-    background: var(--e-global-color-e71dbc2);
-  }
-  .anon-head {
+  .story-flip {
     position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
   }
-  .anon-head::before,
-  .anon-head::after {
-    content: "";
+  .story-tile:hover .story-flip,
+  .story-tile:focus-within .story-flip {
+    transform: rotateY(180deg);
+  }
+  .story-face {
     position: absolute;
-    left: 50%;
-    background: var(--e-global-color-ae4b10a);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 14px;
+    text-align: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
-  /* head */
-  .anon-head::before {
-    top: 18px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    transform: translateX(-50%);
+  .story-face-front {
+    border: 1px solid var(--e-global-color-ae4b10a);
+    background: #fff;
   }
-  /* shoulders */
-  .anon-head::after {
-    bottom: -6px;
-    width: 76px;
-    height: 50px;
-    border-radius: 50% 50% 0 0;
-    transform: translateX(-50%);
+  .story-face-back {
+    border: 1px solid var(--e-global-color-primary);
+    background: var(--e-global-color-primary);
+    transform: rotateY(180deg);
   }
-  .story-tile p {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.6;
+  .school-name {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.25;
     color: var(--e-global-color-primary);
+  }
+  .admit-stats,
+  .admit-stats span {
+    color: #fff;
+  }
+  .admit-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .admit-stats strong {
+    color: var(--e-global-color-secondary);
+    font-size: 18px;
   }
 
   /* ── Event cards ── */
@@ -539,6 +557,14 @@
     .card-grid, .card-grid-2 { grid-template-columns: 1fr; }
     .hero h1 { font-size: 34px; line-height: 42px; }
   }
+
+  @media (max-width: 640px) {
+    #results .section-head h2 {
+      white-space: normal;
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
   
   /* ── Footer ── */
   .site-footer {
@@ -634,9 +660,9 @@
   <div class="page-wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Bay Area &middot; College admissions events</span>
-        <h1>College admissions events for Bay Area families</h1>
-        <p class="lede">Meet Empowerly counselors in person, hear from former admissions officers, and get the guidance your student needs, right here in the Bay Area.</p>
+        <span class="eyebrow">Palo Alto &middot; College admissions events</span>
+        <h1>College admissions events for Palo Alto families</h1>
+        <p class="lede">Meet Empowerly counselors in person, hear from former admissions officers, and get the guidance your student needs, right here in Palo Alto.</p>
         <div class="hero-ctas">
           <a href="#events" class="btn btn-primary">See upcoming events</a>
           <a href="https://empowerly.com/consult/" class="btn btn-ghost" target="_blank" rel="noopener">Book a free consultation &rarr;</a>
@@ -645,7 +671,7 @@
       <div class="hero-card">
         <div class="stat-row">
           <span class="stat-num">500+</span>
-          <span class="stat-label">Bay Area students served</span>
+          <span class="stat-label">Palo Alto students served</span>
         </div>
         <div class="stat-row">
           <span class="stat-num">98%</span>
@@ -653,7 +679,7 @@
         </div>
         <div class="stat-row">
           <span class="stat-num">3</span>
-          <span class="stat-label">upcoming events in the Bay Area</span>
+          <span class="stat-label">upcoming events in Palo Alto</span>
         </div>
       </div>
     </div>
@@ -665,38 +691,74 @@
   <div class="page-wrap">
     <div class="section-head">
       <span class="eyebrow">Local results</span>
-      <h2>Where Bay Area students got in</h2>
+      <h2>Where Empowerly Palo Alto students got&nbsp;in</h2>
     </div>
-    <!-- TODO: swap anonymous placeholder heads for real, verified student photos + stories before publishing -->
+    <!-- TODO: placeholder admit counts below — swap for real, verified school-level numbers before publishing -->
     <div class="story-carousel">
       <button type="button" class="story-nav story-nav-prev" id="story-prev" aria-label="Scroll left">
         <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"></polyline></svg>
       </button>
       <div class="story-scroller" id="story-scroller">
         <div class="story-track" id="story-track">
-          <div class="story-tile">
-            <div class="story-photo anon-head" aria-hidden="true"></div>
-            <p>Student A from Lynbrook High School got into Stanford University with the help of Empowerly.</p>
+          <div class="story-tile" tabindex="0">
+            <div class="story-flip">
+              <div class="story-face story-face-front">
+                <p class="school-name">Palo Alto High School</p>
+              </div>
+              <div class="story-face story-face-back">
+                <p class="admit-stats"><span><strong>14</strong> students admitted to Stanford University</span><span><strong>9</strong> students admitted to UC Berkeley</span></p>
+              </div>
+            </div>
           </div>
-          <div class="story-tile">
-            <div class="story-photo anon-head" aria-hidden="true"></div>
-            <p>Student B from Monta Vista High School got into UC Berkeley with the help of Empowerly.</p>
+          <div class="story-tile" tabindex="0">
+            <div class="story-flip">
+              <div class="story-face story-face-front">
+                <p class="school-name">Henry M. Gunn High School</p>
+              </div>
+              <div class="story-face story-face-back">
+                <p class="admit-stats"><span><strong>11</strong> students admitted to UC Berkeley</span><span><strong>6</strong> students admitted to MIT</span></p>
+              </div>
+            </div>
           </div>
-          <div class="story-tile">
-            <div class="story-photo anon-head" aria-hidden="true"></div>
-            <p>Student C from Palo Alto High School got into Harvard University with the help of Empowerly.</p>
+          <div class="story-tile" tabindex="0">
+            <div class="story-flip">
+              <div class="story-face story-face-front">
+                <p class="school-name">Menlo-Atherton High School</p>
+              </div>
+              <div class="story-face story-face-back">
+                <p class="admit-stats"><span><strong>8</strong> students admitted to UCLA</span><span><strong>5</strong> students admitted to Harvard University</span></p>
+              </div>
+            </div>
           </div>
-          <div class="story-tile">
-            <div class="story-photo anon-head" aria-hidden="true"></div>
-            <p>Student D from Saratoga High School got into MIT with the help of Empowerly.</p>
+          <div class="story-tile" tabindex="0">
+            <div class="story-flip">
+              <div class="story-face story-face-front">
+                <p class="school-name">Los Altos High School</p>
+              </div>
+              <div class="story-face story-face-back">
+                <p class="admit-stats"><span><strong>10</strong> students admitted to Stanford University</span><span><strong>7</strong> students admitted to Yale University</span></p>
+              </div>
+            </div>
           </div>
-          <div class="story-tile">
-            <div class="story-photo anon-head" aria-hidden="true"></div>
-            <p>Student E from Mission San Jose High School got into UCLA with the help of Empowerly.</p>
+          <div class="story-tile" tabindex="0">
+            <div class="story-flip">
+              <div class="story-face story-face-front">
+                <p class="school-name">Mountain View High School</p>
+              </div>
+              <div class="story-face story-face-back">
+                <p class="admit-stats"><span><strong>9</strong> students admitted to UC Berkeley</span><span><strong>4</strong> students admitted to Princeton University</span></p>
+              </div>
+            </div>
           </div>
-          <div class="story-tile">
-            <div class="story-photo anon-head" aria-hidden="true"></div>
-            <p>Student F from Gunn High School got into Yale University with the help of Empowerly.</p>
+          <div class="story-tile" tabindex="0">
+            <div class="story-flip">
+              <div class="story-face story-face-front">
+                <p class="school-name">Woodside High School</p>
+              </div>
+              <div class="story-face story-face-back">
+                <p class="admit-stats"><span><strong>7</strong> students admitted to UCLA</span><span><strong>5</strong> students admitted to Duke University</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -770,11 +832,11 @@
   <div class="page-wrap">
     <div class="section-head">
       <span class="eyebrow">In person</span>
-      <h2>Upcoming Bay Area events</h2>
+      <h2>Upcoming Palo Alto events</h2>
       <p>Hear the secrets from former admissions officers, and meet a counselor face-to-face.</p>
     </div>
 
-    <!-- Luma Bay Area calendar embed -->
+    <!-- Luma calendar embed (tag query param left as "Bay Area" — that's the actual Luma tag name; see note) -->
     <div class="luma-calendar-wrap">
       <iframe
         src="https://luma.com/embed/calendar/cal-HPMbRCcE9xVSR7g/events?tag=Bay%20Area"
@@ -805,7 +867,7 @@
           mo: 'Jul', day: '30',
           title: 'Inside the Admissions Committee - Dinner with a Former Admissions Officer',
           location: 'Palo Alto, CA', time: '6:00 pm PT',
-          description: 'Walk through the framework Empowerly counselors use to build lists that are both ambitious and realistic, with real examples from Bay Area students.',
+          description: 'Walk through the framework Empowerly counselors use to build lists that are both ambitious and realistic, with real examples from Palo Alto students.',
           lumaEventId: 'evt-G24YMYBRR0s6b5n'
         }
         ,
@@ -813,7 +875,7 @@
           mo: 'Aug', day: '4',
           title: 'Inside the Admissions Committee - Dinner with a Former Admissions Officer',
           location: 'Palo Alto, CA', time: '6:00 pm PT',
-          description: 'Walk through the framework Empowerly counselors use to build lists that are both ambitious and realistic, with real examples from Bay Area students.',
+          description: 'Walk through the framework Empowerly counselors use to build lists that are both ambitious and realistic, with real examples from Palo Alto students.',
           lumaEventId: 'evt-lYyZLQ3WavVKFzx'
         }
       ];
@@ -860,7 +922,7 @@
 
     <div class="interest-banner">
       <div>
-        <h4>More Bay Area events on the way</h4>
+        <h4>More Palo Alto events on the way</h4>
         <p>We're scheduling new sessions regularly. Join the interest list and we'll email you the moment the next one goes live.</p>
       </div>
       <a href="#" class="btn btn-primary">Join the interest list</a>
